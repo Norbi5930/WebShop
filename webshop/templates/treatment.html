@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <h1 class="shop-title">Árucikk kezelése</h1>
+  <div class="card mt-3 mx-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ object.title }}</h5>
+      <p class="card-text">{{ object.description }}</p>
+    </div>
+    <div class="card-price-body mx-3">
+      <p class="card-price">{{ object.uname }}</p>
+    </div>
+    <div class="card-price-body mx-3">
+      <p class="card-price">{{ object.price }}$</p>
+    </div>
+    <div class="card-body">
+      {% if object.uname == current_user.username %}
+        <a href="{{ url_for('update', shop_id=object.id) }}" class="btn btn-secondary btn-sm mt-1 mb-1">Frissítés</a>
+        <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Törlés</button>
+      {% endif %}
+    </div>
+  </div>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Törlöd a cikket?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-footer" style="flex-wrap: nowrap">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
+            <form style="display: inline" action="{{ url_for('delete', shop_id=object.id) }}" method="POST">
+              <input class="btn btn-danger" type="submit" value="Törlés">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+{% endblock content %}

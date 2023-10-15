@@ -1,0 +1,124 @@
+body {
+    background-color: bisque;
+}
+
+
+form {
+    font-size: 20px;
+    width: 800px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.card {
+    background-color: beige;
+}
+
+.card-price {
+    font-size: 20px;
+}
+
+.card-price-body {
+    height: 30px;
+}
+
+.contact-body {
+    text-align: center;
+}
+
+.contact-text {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    transition: color 0.3;
+}
+
+.contact-text:hover {
+    color: blue;
+}
+
+.welcome-body {
+    text-align: center;
+    color:coral;
+}
+
+
+.enquiry-body-login {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-30%, -200px);
+
+}
+
+.enquiry-text-login {
+    font-size: 28px;
+    width: 400px;
+}
+
+.enquiry-body-register {
+    font-size: 28px;
+    width: 480px;
+}
+
+.btn-login {
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    border-radius: 10px;
+    user-select: none;
+    background-color: darkgray;
+
+}
+
+.btn-login:hover {
+    user-select: none;
+    background-color: gray;
+}
+
+
+.enquiry-body-register {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(20%, -200px);
+}
+
+
+.btn-register {
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    border-radius: 10px;
+    user-select: none;
+    background-color: darkgray;
+}
+
+
+.btn-register:hover {
+    user-select: none;
+    background-color: gray;
+}
+
+
+.card-link {
+    width: 100px;
+    color: white;
+    background-color: green;
+    user-select: none;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+
+.card-link:hover {
+    color: black;
+    background-color: greenyellow;
+}
+
+
+.shop-title {
+    color: black;
+    text-align: center;
+}

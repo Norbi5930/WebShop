@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+    <h1 class="shop-title">Megrendelések</h1>
+    {% for object in objects %}
+        <div class="card mt-3 mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ object.title }}</h5>
+              <p class="card-text">{{ object.description }}</p>
+            </div>
+            <div class="card-price-body mx-3 my-4">
+              <p class="card-price">Megrendelő neve: {{ object.buying_name }}</p>
+            </div>
+            <div class="card-price-body mx-3 my-4">
+                <p class="card-price">Megrendelő e-mail címe: {{ object.buying_email }}</p>
+            </div>
+            <div class="card-price-body mx-3 my-4">
+                <p class="card-price">Megrendelő posta címe: {{ object.buying_locate }}</p>
+            </div>
+            <div class="card-price-body mx-3 my-4">
+                <p class="card-price">Megrendelő telefonszáma: +{{ object.buying_mobil }}</p>
+            </div>
+            <div class="card-price-body mx-3 my-4">
+              <p class="card-price">{{ object.price }}$</p>
+            </div>
+          </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+    <h1 class="welcome-body">Üdvözlünk téged az Archemy Webshop weboldalán!</h1>
+    <div class="enquiry-body-login">
+        <div class="enquiry-text-login">
+            Ha pedig már van fiókod. Jelentkezz be!
+        </div>
+        <a type="submit" class="btn-login my-3" href="{{ url_for('login') }}">
+            Bejelentkezés
+        </a>
+    </div>
+    <div class="enquiry-body-register">
+        <div class="enquiry-text-register">
+            Még nincs fiókod, akkor mire vársz? Regisztrálj most!
+        </div>
+        <a type="submit" class="btn-register my-3" href="{{ url_for('register') }}">
+            Regisztráció
+        </a>
+    </div>
+
+{% endblock content %}

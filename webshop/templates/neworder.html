@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+    <h2 class="my-3">Rendelés leadás</h2>
+    <form class="form-group" action="" method="post">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+        <div class="form-group">
+            {{ form.locate.label(class="form-control-label") }}
+
+            {% if form.locate.errors %}
+                {{ form.locate(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.locate.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.locate(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.mobil_number.label(class="form-control-label") }}
+
+            {% if form.mobil_number.errors %}
+                {{ form.mobil_number(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.mobil_number.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.mobil_number(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-secondary") }}
+        </div>
+    </form>
+
+
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+    <h2>Felhasználónév: {{ current_user.username }}</h2>
+    <h2>E-mail: {{ current_user.email }}</h2>
+    <h2>Account ID: {{ current_user.id }}</h2>
+
+
+    <div class="form-group">
+        <a class="btn btn-secondary" href="{{ url_for('my_cart') }}">Kosaram</a>
+        <a class="btn btn-secondary" href="{{ url_for('orders')}}">Megrendelések</a>
+    </div>
+    
+{% endblock content %}

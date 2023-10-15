@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+  <h1 class="shop-title">Shop</h1>
+  {% for object in objects %}
+    <div class="card mt-3 mx-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ object.title }}</h5>
+          <p class="card-text">{{ object.description }}</p>
+        </div>
+        <div class="card-price-body mx-3">
+          <p class="card-price">{{ object.uname }}</p>
+        </div>
+        <div class="card-price-body mx-3">
+          <p class="card-price">{{ object.price }}$</p>
+        </div>
+        <div class="card-body">
+          <a href="{{ url_for('add_cart', shop_id=object.id) }}" class="card-link">Kosárba</a>
+          {% if object.uname == current_user.username %}
+            <a href="{{ url_for('obj', shop_id=object.id) }}" class="card-link">Kezelés</a>
+          {% endif %}
+        </div>
+      </div>
+  {% endfor %}
+
+{% endblock content %}
